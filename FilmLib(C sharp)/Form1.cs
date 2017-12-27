@@ -32,7 +32,7 @@ namespace FilmLib_C_sharp_
         {
             this.Hide();
             Form3 b = new Form3();
-            b.Closed += (s, args) => this.Show();
+            b.Closed += (s, args) => this.Show(); //open form1 while closing form3
             b.Show();
             
         }

@@ -67,12 +67,14 @@ namespace FilmLib_C_sharp_
             {
                 MessageBox.Show("First name must be only letters");
             }
+            //Validation completed
             if (check)
             {
                 Database a = new Database();
                 a.storeData("Users", "fName, lName, age, Username, Pass", "'" + fname.Text + "', '" + lName.Text + "', " + age.Text + ", '" + usr.Text + "', '" + pass.Text + "'");
                 MessageBox.Show("Registration succeeded!!!");
             }
+            //storing data completed
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
