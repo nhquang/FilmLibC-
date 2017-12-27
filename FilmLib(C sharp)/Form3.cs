@@ -18,6 +18,7 @@ namespace FilmLib_C_sharp_
         {
             InitializeComponent();
         }
+        
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
@@ -69,9 +70,7 @@ namespace FilmLib_C_sharp_
             if (check)
             {
                 Database a = new Database();
-                int ageNum;
-                Int32.TryParse(age.Text, out ageNum);
-                a.storeData("Users", "fName, lName, age, Username, Pass", "'" + fname.Text + "', '" + lName.Text + "', " + ageNum + ", '" + usr.Text + "', '" + pass.Text + "'");
+                a.storeData("Users", "fName, lName, age, Username, Pass", "'" + fname.Text + "', '" + lName.Text + "', " + age.Text + ", '" + usr.Text + "', '" + pass.Text + "'");
                 MessageBox.Show("Registration succeeded!!!");
             }
         }
@@ -79,8 +78,7 @@ namespace FilmLib_C_sharp_
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form1 f1 = new Form1();
-            f1.Show();
+            
         }
     }
 }
