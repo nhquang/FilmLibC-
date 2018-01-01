@@ -20,7 +20,9 @@ namespace FilmLib_C_sharp_
         private void logInBtn_Click(object sender, EventArgs e)
         {
             Form2 a = new Form2();
-            a.ShowDialog();
+            this.Hide();
+            a.Show();
+            a.Closed += (s, args) => this.Show();
         }
 
         private void exitBtn_Click(object sender, EventArgs e)

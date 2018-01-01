@@ -21,6 +21,7 @@ namespace FilmLib_C_sharp_
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            bool check = false;
             Database a = new Database();
             List<object> matchedUser =  a.getData("Users", "Username", "Username = '" + usr.Text + "'");
             if(matchedUser.Count > 0)
@@ -29,6 +30,7 @@ namespace FilmLib_C_sharp_
                 if (string.Compare(matchedPass[0].ToString(), pass.Text) == 0)
                 {
                     MessageBox.Show("Succeeded!!!");
+                    check = true;
                 }
                 else
                 {
@@ -38,6 +40,15 @@ namespace FilmLib_C_sharp_
             else
             {
                 MessageBox.Show("Username or Password is incorrect");
+            }
+            if (check)
+            {
+                User initiateUser = new User(usr.Text);
+                initiateUser.importUser();
+                Form4 frm4 = new Form4(initiateUser);
+                frm4.Show();
+                this.Close();
+
             }
 
         }

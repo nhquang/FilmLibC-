@@ -58,6 +58,34 @@ namespace FilmLib_C_sharp_
             return data;
             
         }
+
+        public List<object> getDataFromJoin(string tbl1, string tbl2, string key, string col, string cond)
+        {
+            List<object> data = new List<object>();
+            try
+            {
+                cmd = new SqlCommand();
+                cmd.CommandText = "SELECT " + col + " FROM " + tbl1 + " a Join " + tbl2 + " b On a." + key + "=b." + key + " WHERE " + cond;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = sqlcon;
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        data.Add(reader.GetValue(0));
+                    }
+                }
+                reader.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return data;
+
+        }
         public void storeData(string tbl, string cols, string vals)
         {
             try

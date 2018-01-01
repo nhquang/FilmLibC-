@@ -23,6 +23,7 @@ namespace FilmLib_C_sharp_
         private void signUpBtn_Click(object sender, EventArgs e)
         {
             bool check = false;
+            Database a = new Database();
             Validate val = new Validate();
             if (val.onlyLettersVal(fname.Text))
             {
@@ -36,7 +37,15 @@ namespace FilmLib_C_sharp_
                             {
                                 if(string.Compare(pass.Text, confirmPass.Text) == 0)
                                 {
-                                    check = true;
+                                    List<object> rslt = a.getData("Users", "Username", "Username = '" + usr.Text + "'");
+                                    if (rslt.Count == 0)
+                                    {
+                                        check = true;
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Username already exists");
+                                    }
                                 }
                                 else
                                 {
@@ -70,7 +79,6 @@ namespace FilmLib_C_sharp_
             //Validation completed
             if (check)
             {
-                Database a = new Database();
                 a.storeData("Users", "fName, lName, age, Username, Pass", "'" + fname.Text + "', '" + lName.Text + "', " + age.Text + ", '" + usr.Text + "', '" + pass.Text + "'");
                 MessageBox.Show("Registration succeeded!!!");
             }
