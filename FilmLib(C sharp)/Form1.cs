@@ -19,23 +19,26 @@ namespace FilmLib_C_sharp_
 
         private void logInBtn_Click(object sender, EventArgs e)
         {
-            Form2 a = new Form2();
             this.Hide();
+            Form2 a = new Form2();
             a.Show();
             a.Closed += (s, args) => this.Show();
+            
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form3 b = new Form3();
-            b.Closed += (s, args) => this.Show(); //open form1 while closing form3
             b.Show();
+            b.Closed += (s, args) => this.Show(); //open form1 while closing form3
+            
             
         }
     }

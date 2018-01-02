@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FilmLib_C_sharp_
 {
-    public partial class Form2 : Form
+    public partial class Form2 : Form  
     {
         public Form2()
         {
@@ -22,6 +22,7 @@ namespace FilmLib_C_sharp_
         private void loginBtn_Click(object sender, EventArgs e)
         {
             bool check = false;
+           
             Database a = new Database();
             List<object> matchedUser =  a.getData("Users", "Username", "Username = '" + usr.Text + "'");
             if(matchedUser.Count > 0)
@@ -35,11 +36,13 @@ namespace FilmLib_C_sharp_
                 else
                 {
                     MessageBox.Show("Username or Password is incorrect");
+                    
                 }
             }
             else
             {
                 MessageBox.Show("Username or Password is incorrect");
+                
             }
             if (check)
             {
@@ -47,15 +50,18 @@ namespace FilmLib_C_sharp_
                 initiateUser.importUser();
                 Form4 frm4 = new Form4(initiateUser);
                 frm4.Show();
-                this.Close();
+                this.Hide();
+                frm4.Closed += (s, args) => this.Close();
 
             }
-
+            //GC.Collect();
+            
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+            //GC.Collect();
             
         }
     }

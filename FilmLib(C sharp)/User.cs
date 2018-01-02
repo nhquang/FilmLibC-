@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FilmLib_C_sharp_
 {
@@ -23,20 +24,28 @@ namespace FilmLib_C_sharp_
         public void importUser()
         {
             Database a = new Database();
+
             List<object> userId = a.getData("Users", "UserID", "Username = '" + username_ + "'");
-            userId_ = (int)userId[0];
+            userId_ = Convert.ToInt16(userId[0]);
+          
+
             List<object> lName = a.getData("Users", "lName", "Username = '" + username_ + "'");
-            lName_ = lName[0].ToString();
+            lName_ = lName[0].ToString();     
+            
             List<object> fName = a.getData("Users", "fName", "Username = '" + username_ + "'");
             fName_ = fName[0].ToString();
+
             List<object> age = a.getData("Users", "age", "Username = '" + username_ + "'");
-            age_ = (int)age[0];
-            List<object> rated = a.getData("Users", "RATED", "Username = '" + username_ + "'");
-            rated_ = (int)rated[0];
-            List<object> admin = a.getData("Users", "admin", "Username = '" + username_ + "'");
-            admin_ = (bool)admin[0];
-            List<object> favourites = a.getDataFromJoin("Films", "UserFilm", "FilmID", "name", "UserID=" + userId_.ToString());
+            age_ = Convert.ToInt16(age[0]);
+
             
+            List<object> rated = a.getData("Users", "RATED", "Username = '" + username_ + "'");
+            rated_ = Convert.ToInt16(rated[0]);
+
+            List<object> admin = a.getData("Users", "admin", "Username = '" + username_ + "'");            
+            admin_ = (bool)admin[0];
+
+            List<object> favourites = a.getDataFromJoin("Films", "UserFilm", "FilmID", "name", "UserID=" + userId_.ToString());        
             favourites_ = favourites;
         }
         public int getUserID()

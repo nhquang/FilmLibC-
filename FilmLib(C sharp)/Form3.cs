@@ -83,12 +83,13 @@ namespace FilmLib_C_sharp_
                 MessageBox.Show("Registration succeeded!!!");
             }
             //storing data completed
+            //GC.Collect();
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+            //GC.Collect();
         }
     }
 }
