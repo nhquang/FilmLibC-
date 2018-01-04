@@ -17,6 +17,7 @@ namespace FilmLib_C_sharp_
         {
             Regex pattern = new Regex(@"^[a-zA-Z]*$");
             return pattern.IsMatch(name);
+            
         }
         public bool ageVal(string age)
         {

@@ -24,7 +24,9 @@ namespace FilmLib_C_sharp_
         {
             bool check = false;
             Database a = new Database();
+            //database object created
             Validate val = new Validate();
+            //validation object created
             if (val.onlyLettersVal(fname.Text))
             {
                 if (val.onlyLettersVal(lName.Text))
@@ -81,15 +83,16 @@ namespace FilmLib_C_sharp_
             {
                 a.storeData("Users", "fName, lName, age, Username, Pass", "'" + fname.Text + "', '" + lName.Text + "', " + age.Text + ", '" + usr.Text + "', '" + pass.Text + "'");
                 MessageBox.Show("Registration succeeded!!!");
+                this.Close();
             }
             //storing data completed
-            //GC.Collect();
+            a.Dispose();
+            //release database object
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            //GC.Collect();
         }
     }
 }

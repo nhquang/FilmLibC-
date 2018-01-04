@@ -47,6 +47,8 @@ namespace FilmLib_C_sharp_
 
             List<object> favourites = a.getDataFromJoin("Films", "UserFilm", "FilmID", "name", "UserID=" + userId_.ToString());        
             favourites_ = favourites;
+
+            a.Dispose();
         }
         public int getUserID()
         {
