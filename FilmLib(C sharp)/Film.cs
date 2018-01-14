@@ -21,9 +21,9 @@ namespace FilmLib_C_sharp_
         {
             name_ = name;
         }
-        public void importFilm()
+        public void importFilm()                                        //get film data from database
         {
-            Database a = new Database();
+            Database a = new Database();                                //new instance of database class
 
             List<object> filmId = a.getData("Films", "FilmID", "Name = '" + name_ + "'");
             filmId_ = Convert.ToInt16(filmId[0]);
@@ -46,7 +46,7 @@ namespace FilmLib_C_sharp_
             List<object> casts = a.getData("Films", "casts", "Name = '" + name_ + "'");
             casts_ = casts[0].ToString();
 
-            a.Dispose();
+            a.Dispose();                                               //destroys database instance
         }
         public int getFilmId()
         {

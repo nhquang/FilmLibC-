@@ -73,6 +73,7 @@
             this.trailer.TabIndex = 0;
             this.trailer.TabStop = true;
             this.trailer.Text = "Watch the trailer";
+            this.trailer.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.trailer_LinkClicked);
             // 
             // castText
             // 
@@ -110,6 +111,7 @@
             this.exitBtn.TabIndex = 2;
             this.exitBtn.Text = "Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // addBtn
             // 

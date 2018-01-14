@@ -15,7 +15,7 @@ namespace FilmLib_C_sharp_
         private User usr_;
         private Form4 frm4_;
         
-        public Form5(List<Film> matched, User usr, Form4 frm4)
+        public Form5(ref List<Film> matched, ref User usr, Form4 frm4)
         {
             InitializeComponent();
             usr_ = usr;
@@ -37,13 +37,15 @@ namespace FilmLib_C_sharp_
             {
                 MessageBox.Show("Cannot select more than one movie");
             }
-            else if (results.SelectedItems.Count == 1)
+            else if (results.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Select a movie");        
             }
             else
             {
-                Form6 frm6 = new Form6(results.SelectedItems[0].Text, usr_, frm4_);
+                Form6 frm6 = new Form6(results.SelectedItems[0].Text, ref usr_, ref frm4_);
+                frm6.Show();
+                frm4_.Closed += (s, args) => frm6.Close();
             }
         }
 

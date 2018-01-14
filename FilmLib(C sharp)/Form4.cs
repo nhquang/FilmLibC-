@@ -14,7 +14,7 @@ namespace FilmLib_C_sharp_
     {
         private User usr_;
         private BindingSource bs_;
-        public Form4(User user)
+        public Form4(ref User user)
         {
             InitializeComponent();
             bs_ = new BindingSource();
@@ -29,6 +29,7 @@ namespace FilmLib_C_sharp_
         private void signOutBtn_Click(object sender, EventArgs e)
         {
             
+            bs_.Dispose();
             this.Close();
             
         }
@@ -46,6 +47,10 @@ namespace FilmLib_C_sharp_
             
             a.Dispose();
         }
+        public void resetBs()
+        {
+            bs_.ResetBindings(false);
+        }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
@@ -60,8 +65,9 @@ namespace FilmLib_C_sharp_
                 temp.importFilm();
                 matchedFilm.Add(temp);
             }
-            Form5 frm5 = new Form5(matchedFilm, usr_, this);
+            Form5 frm5 = new Form5(ref matchedFilm, ref usr_, this);
             frm5.Show();
+            this.Closed += (s, args) => frm5.Close();
             a.Dispose();
         }
     }

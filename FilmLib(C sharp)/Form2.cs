@@ -50,7 +50,7 @@ namespace FilmLib_C_sharp_
                 
                 initiateUser.importUser();                                                                      //pull user's info from database
                 
-                Form4 frm4 = new Form4(initiateUser);                                                           //pass User object to Dashboard form
+                Form4 frm4 = new Form4(ref initiateUser);                                                           //pass User object to Dashboard form
 
                 frm4.Show();
                 this.Hide();

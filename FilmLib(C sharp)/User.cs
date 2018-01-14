@@ -22,9 +22,9 @@ namespace FilmLib_C_sharp_
             username_ = username;
             favourites_ = new List<Film>();
         }
-        public void importUser()
+        public void importUser()                                                    //get user data from database
         {
-            Database a = new Database();
+            Database a = new Database();                                            //new database instance
 
             List<object> userId = a.getData("Users", "UserID", "Username = '" + username_ + "'");
             userId_ = Convert.ToInt16(userId[0]);
