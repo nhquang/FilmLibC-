@@ -15,7 +15,7 @@ namespace FilmLib_C_sharp_
         private User usr_;
         private Form4 frm4_;
         
-        public Form5(ref List<Film> matched, ref User usr, Form4 frm4)
+        public Form5(ref List<Film> matched, ref User usr, Form4 frm4)          //prepare the listView with matched movies
         {
             InitializeComponent();
             usr_ = usr;
@@ -45,7 +45,7 @@ namespace FilmLib_C_sharp_
             {
                 Form6 frm6 = new Form6(results.SelectedItems[0].Text, ref usr_, ref frm4_);
                 frm6.Show();
-                frm4_.Closed += (s, args) => frm6.Close();
+                frm4_.Closed += (s, args) => frm6.Close();                  //when users sign out, close the movie info page 
             }
         }
 

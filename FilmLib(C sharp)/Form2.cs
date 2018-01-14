@@ -43,7 +43,7 @@ namespace FilmLib_C_sharp_
                 MessageBox.Show("Username or Password is incorrect");
                 
             }
-            a.Dispose();                                                                                        //release database object (unmanaged object)
+            a.Dispose();                                                                                        //free up memory space used by "a", whenever GC is available
             if (check)
             {
                 User initiateUser = new User(usr.Text);                                                         //new User object created

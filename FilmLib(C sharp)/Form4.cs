@@ -14,7 +14,7 @@ namespace FilmLib_C_sharp_
     {
         private User usr_;
         private BindingSource bs_;
-        public Form4(ref User user)
+        public Form4(ref User user)                             //prepare the dashboard with the user's info
         {
             InitializeComponent();
             bs_ = new BindingSource();
@@ -22,8 +22,8 @@ namespace FilmLib_C_sharp_
             nameLbl.Text += "Hi " + usr_.getName();
             ageLbl.Text += " " + usr_.getAge().ToString();
             genderLbl.Text += " " + usr_.getGender();
-            bs_.DataSource = usr_.getFavourites();
-            filmList.DataSource = bs_;
+            bs_.DataSource = usr_.getFavourites();             //bs datasource and usr_.favourites are pointing to the same memory allocation
+            filmList.DataSource = bs_;                         //bs datasource and filmList datasource are pointing to the same memory allocation
         }
 
         private void signOutBtn_Click(object sender, EventArgs e)
@@ -37,13 +37,13 @@ namespace FilmLib_C_sharp_
         private void rmBtn_Click(object sender, EventArgs e)
         {
             Database a = new Database();
-            //Film temp = new Film(filmList.SelectedItem.ToString());
+            
             Film temp = (Film)filmList.SelectedItem;
             a.rmRow("UserFilm", "UserID = " + usr_.getUserID().ToString() + " AND FilmID = "+ temp.getFilmId().ToString());
 
             usr_.getFavourites().Remove((Film)filmList.SelectedItem);
 
-            bs_.ResetBindings(false);
+            bs_.ResetBindings(false);                       //update the listbox after an object is removed from usr_ favourite list
             
             a.Dispose();
         }
@@ -67,7 +67,7 @@ namespace FilmLib_C_sharp_
             }
             Form5 frm5 = new Form5(ref matchedFilm, ref usr_, this);
             frm5.Show();
-            this.Closed += (s, args) => frm5.Close();
+            this.Closed += (s, args) => frm5.Close();                       //when dashboard closed, the search result form get closed too
             a.Dispose();
         }
     }

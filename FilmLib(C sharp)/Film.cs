@@ -46,7 +46,7 @@ namespace FilmLib_C_sharp_
             List<object> casts = a.getData("Films", "casts", "Name = '" + name_ + "'");
             casts_ = casts[0].ToString();
 
-            a.Dispose();                                               //destroys database instance
+            a.Dispose();                                               //free up memory space used by "a", whenever GC is available 
         }
         public int getFilmId()
         {

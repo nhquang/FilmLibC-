@@ -57,7 +57,7 @@ namespace FilmLib_C_sharp_
                 favourites_.Add(temp);
             }
 
-            a.Dispose();
+            a.Dispose();                                                            //free up memory space used by "a", whenever GC is available
         }
         public int getUserID()
         {

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace FilmLib_C_sharp_
 {
-     public class Database : IDisposable
+     public class Database : IDisposable                        //database queries handling class
     {
         private SqlConnection sqlcon;
         private SqlCommand cmd;
@@ -32,7 +32,7 @@ namespace FilmLib_C_sharp_
         }
 
         
-        public List<object> getData(string tbl, string col, string cond)
+        public List<object> getData(string tbl, string col, string cond)       //get data from one column with condition specified
         {
             List<object> data = new List<object>();
             try
@@ -60,7 +60,7 @@ namespace FilmLib_C_sharp_
             
         }
 
-        public List<object> getDataFromJoin(string tbl1, string tbl2, string key, string col, string cond)
+        public List<object> getDataFromJoin(string tbl1, string tbl2, string key, string col, string cond)      //get data from one column with 2 joined tables and condition specified
         {
             List<object> data = new List<object>();
             try
@@ -88,7 +88,7 @@ namespace FilmLib_C_sharp_
             return data;
 
         }
-        public void storeData(string tbl, string cols, string vals)
+        public void storeData(string tbl, string cols, string vals)                     //insert new row to the table
         {
             try
             {
@@ -103,7 +103,7 @@ namespace FilmLib_C_sharp_
                 MessageBox.Show(ex.Message);
             }
         }
-        public void rmRow(string tbl, string conds)
+        public void rmRow(string tbl, string conds)                                     //delete a row from the table
         {
             try
             {
@@ -122,7 +122,7 @@ namespace FilmLib_C_sharp_
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
 
-        protected virtual void Dispose(bool disposing)
+        protected virtual void Dispose(bool disposing)                                  //let the GC know that the instance of this class won't be used anymore, so the GC can release the memory whenever it's available
         {
             if (!disposedValue)
             {
