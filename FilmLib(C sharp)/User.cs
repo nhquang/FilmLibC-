@@ -14,12 +14,13 @@ namespace FilmLib_C_sharp_
         private string lName_;
         private string fName_;
         private int age_;
-        private int rated_;
+        private string gender_;
         private bool admin_;
-        private List<object> favourites_;
+        private List<Film> favourites_;
         public User(string username)
         {
             username_ = username;
+            favourites_ = new List<Film>();
         }
         public void importUser()
         {
@@ -39,14 +40,22 @@ namespace FilmLib_C_sharp_
             age_ = Convert.ToInt16(age[0]);
 
             
-            List<object> rated = a.getData("Users", "RATED", "Username = '" + username_ + "'");
-            rated_ = Convert.ToInt16(rated[0]);
+            List<object> gender = a.getData("Users", "gender", "Username = '" + username_ + "'");
+            gender_ = gender[0].ToString();
 
             List<object> admin = a.getData("Users", "admin", "Username = '" + username_ + "'");            
             admin_ = (bool)admin[0];
-
+            
             List<object> favourites = a.getDataFromJoin("Films", "UserFilm", "FilmID", "name", "UserID=" + userId_.ToString());        
-            favourites_ = favourites;
+            for(int i = 0; i < favourites.Count; i++)
+            {
+                
+                Film temp = new Film(favourites[i].ToString());
+                
+                temp.importFilm();
+                
+                favourites_.Add(temp);
+            }
 
             a.Dispose();
         }
@@ -66,15 +75,15 @@ namespace FilmLib_C_sharp_
         {
             return age_;
         }
-        public int getRated()
+        public string getGender()
         {
-            return rated_;
+            return gender_;
         }
         public bool getAdmin()
         {
             return admin_;
         }
-        public List<object> getFavourites()
+        public List<Film> getFavourites()
         {
             
             return favourites_;

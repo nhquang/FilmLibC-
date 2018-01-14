@@ -47,8 +47,11 @@ namespace FilmLib_C_sharp_
             if (check)
             {
                 User initiateUser = new User(usr.Text);                                                         //new User object created
+                
                 initiateUser.importUser();                                                                      //pull user's info from database
+                
                 Form4 frm4 = new Form4(initiateUser);                                                           //pass User object to Dashboard form
+
                 frm4.Show();
                 this.Hide();
                 frm4.Closed += (s, args) => this.Close();                                                       //when dashboard form closed, log in form closed too

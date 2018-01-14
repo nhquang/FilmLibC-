@@ -85,6 +85,7 @@ namespace FilmLib_C_sharp_
                 MessageBox.Show("Registration succeeded!!!");
                 this.Close();
             }
+            
             //storing data completed
             a.Dispose();
             //release database object

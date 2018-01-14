@@ -47,10 +47,10 @@ namespace FilmLib_C_sharp_
                     while (reader.Read())
                     {
                         data.Add(reader.GetValue(0));
+                        
                     }
                 }
                 reader.Close();
-                
             }
             catch(Exception e)
             {
@@ -75,6 +75,7 @@ namespace FilmLib_C_sharp_
                     while (reader.Read())
                     {
                         data.Add(reader.GetValue(0));
+                        
                     }
                 }
                 reader.Close();
@@ -98,6 +99,21 @@ namespace FilmLib_C_sharp_
                 cmd.ExecuteNonQuery();
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void rmRow(string tbl, string conds)
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                cmd.CommandText = "DELETE FROM " + tbl + " WHERE " + conds;
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = sqlcon;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

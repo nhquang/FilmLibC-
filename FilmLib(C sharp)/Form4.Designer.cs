@@ -38,7 +38,7 @@
             this.Panel1 = new System.Windows.Forms.Panel();
             this.editProfileBtn = new System.Windows.Forms.Button();
             this.ageLbl = new System.Windows.Forms.Label();
-            this.rateLbl = new System.Windows.Forms.Label();
+            this.genderLbl = new System.Windows.Forms.Label();
             this.nameLbl = new System.Windows.Forms.Label();
             this.dashboard = new System.Windows.Forms.Label();
             this.Panel2.SuspendLayout();
@@ -75,6 +75,7 @@
             this.searchBtn.TabIndex = 5;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // search
             // 
@@ -92,6 +93,7 @@
             this.rmBtn.TabIndex = 3;
             this.rmBtn.Text = "Remove from favourite";
             this.rmBtn.UseVisualStyleBackColor = true;
+            this.rmBtn.Click += new System.EventHandler(this.rmBtn_Click);
             // 
             // addMovBtn
             // 
@@ -115,7 +117,7 @@
             // 
             this.Panel1.Controls.Add(this.editProfileBtn);
             this.Panel1.Controls.Add(this.ageLbl);
-            this.Panel1.Controls.Add(this.rateLbl);
+            this.Panel1.Controls.Add(this.genderLbl);
             this.Panel1.Controls.Add(this.nameLbl);
             this.Panel1.Location = new System.Drawing.Point(21, 98);
             this.Panel1.Name = "Panel1";
@@ -137,20 +139,20 @@
             this.ageLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ageLbl.Location = new System.Drawing.Point(3, 72);
             this.ageLbl.Name = "ageLbl";
-            this.ageLbl.Size = new System.Drawing.Size(76, 23);
+            this.ageLbl.Size = new System.Drawing.Size(84, 23);
             this.ageLbl.TabIndex = 0;
             this.ageLbl.Text = "Age:";
             this.ageLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // rateLbl
+            // genderLbl
             // 
-            this.rateLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rateLbl.Location = new System.Drawing.Point(3, 170);
-            this.rateLbl.Name = "rateLbl";
-            this.rateLbl.Size = new System.Drawing.Size(224, 23);
-            this.rateLbl.TabIndex = 0;
-            this.rateLbl.Text = "Movies\' Rating contributed: ";
-            this.rateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.genderLbl.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderLbl.Location = new System.Drawing.Point(3, 170);
+            this.genderLbl.Name = "genderLbl";
+            this.genderLbl.Size = new System.Drawing.Size(145, 23);
+            this.genderLbl.TabIndex = 0;
+            this.genderLbl.Text = "Gender:";
+            this.genderLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // nameLbl
             // 
@@ -201,7 +203,7 @@
         internal System.Windows.Forms.Panel Panel1;
         internal System.Windows.Forms.Button editProfileBtn;
         internal System.Windows.Forms.Label ageLbl;
-        internal System.Windows.Forms.Label rateLbl;
+        internal System.Windows.Forms.Label genderLbl;
         internal System.Windows.Forms.Label nameLbl;
         internal System.Windows.Forms.Label dashboard;
     }
