@@ -19,10 +19,10 @@ namespace FilmLib_C_sharp_
             return pattern.IsMatch(name);
             
         }
-        public bool ageVal(string age)
+        public bool numOnlyVal(string num)
         {
             Regex pattern = new Regex(@"^[0-9][0-9]$");
-            return pattern.IsMatch(age);
+            return pattern.IsMatch(num);
         }
 
         /*public bool usernameVal(string usr)
@@ -30,9 +30,14 @@ namespace FilmLib_C_sharp_
             Regex pattern = new Regex(@"^[0-9a-zA-Z]*$");
             return pattern.IsMatch(usr);
         }*/
-        public bool UsrAndPassVal(string val)
+        public bool LettersAndNum(string val)
         {
             Regex pattern = new Regex(@"^[0-9a-zA-Z]*$");
+            return pattern.IsMatch(val);
+        }
+        public bool LettersAndCommas(string val)
+        {
+            Regex pattern = new Regex(@"^[a-zA-Z,{1,2}]*$");
             return pattern.IsMatch(val);
         }
     }

@@ -15,7 +15,7 @@ namespace FilmLib_C_sharp_
         private Form4 frm4_;
         private User usr_;
         private Film film_;
-        public Form6(string filmNamee, ref User usr, ref Form4 frm4)
+        public Form6(string filmNamee, ref User usr, Form4 frm4)
         {
             InitializeComponent();
             usr_ = usr;
@@ -25,7 +25,7 @@ namespace FilmLib_C_sharp_
             filmName.Text = film_.getName();
             descriptText.Text = film_.getDescript();
             genreText.Text = film_.getGenre();
-            ratingText.Text = film_.getGenre();
+            ratingText.Text = film_.getRate().ToString() + " /10";
             castText.Text = film_.getCasts();
             image.ImageLocation = film_.getImageLink();
             image.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -51,7 +51,7 @@ namespace FilmLib_C_sharp_
                 Database a = new Database();
                 a.storeData("UserFilm", "UserID, FilmID", usr_.getUserID().ToString() + ", " + film_.getFilmId().ToString());
                 usr_.getFavourites().Add(film_);
-                frm4_.resetBs();
+                frm4_.resetBs();                //update listbox in frm4_ after usr_.favourites_ gets updated
                 MessageBox.Show("Added to your favourites");
                 a.Dispose();
             }
@@ -66,7 +66,12 @@ namespace FilmLib_C_sharp_
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(image.IsDisposed.ToString());
+            image.Dispose();
+            //MessageBox.Show(image.IsDisposed.ToString());
+           
             this.Close();
+            
         }
     }
 }

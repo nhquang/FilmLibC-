@@ -41,6 +41,7 @@
             this.genderLbl = new System.Windows.Forms.Label();
             this.nameLbl = new System.Windows.Forms.Label();
             this.dashboard = new System.Windows.Forms.Label();
+            this.detailBtn = new System.Windows.Forms.Button();
             this.Panel2.SuspendLayout();
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // Panel2
             // 
+            this.Panel2.Controls.Add(this.detailBtn);
             this.Panel2.Controls.Add(this.searchBtn);
             this.Panel2.Controls.Add(this.search);
             this.Panel2.Controls.Add(this.rmBtn);
@@ -104,6 +106,7 @@
             this.addMovBtn.TabIndex = 6;
             this.addMovBtn.Text = "Add a movie";
             this.addMovBtn.UseVisualStyleBackColor = true;
+            this.addMovBtn.Click += new System.EventHandler(this.addMovBtn_Click);
             // 
             // filmList
             // 
@@ -173,6 +176,16 @@
             this.dashboard.Text = "Dashboard";
             this.dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // detailBtn
+            // 
+            this.detailBtn.Location = new System.Drawing.Point(6, 101);
+            this.detailBtn.Name = "detailBtn";
+            this.detailBtn.Size = new System.Drawing.Size(122, 23);
+            this.detailBtn.TabIndex = 2;
+            this.detailBtn.Text = "View Details";
+            this.detailBtn.UseVisualStyleBackColor = true;
+            this.detailBtn.Click += new System.EventHandler(this.detailBtn_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,5 +219,6 @@
         internal System.Windows.Forms.Label genderLbl;
         internal System.Windows.Forms.Label nameLbl;
         internal System.Windows.Forms.Label dashboard;
+        internal System.Windows.Forms.Button detailBtn;
     }
 }

@@ -36,16 +36,23 @@ namespace FilmLib_C_sharp_
 
         private void rmBtn_Click(object sender, EventArgs e)
         {
-            Database a = new Database();
-            
-            Film temp = (Film)filmList.SelectedItem;
-            a.rmRow("UserFilm", "UserID = " + usr_.getUserID().ToString() + " AND FilmID = "+ temp.getFilmId().ToString());
+            if (filmList.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select a movie");
+            }
+            else
+            {
+                Database a = new Database();
 
-            usr_.getFavourites().Remove((Film)filmList.SelectedItem);
+                Film temp = (Film)filmList.SelectedItem;
+                a.rmRow("UserFilm", "UserID = " + usr_.getUserID().ToString() + " AND FilmID = " + temp.getFilmId().ToString());
 
-            bs_.ResetBindings(false);                       //update the listbox after an object is removed from usr_ favourite list
-            
-            a.Dispose();
+                usr_.getFavourites().Remove((Film)filmList.SelectedItem);     //selected film is removed from usr_.favourites_ 
+
+                bs_.ResetBindings(false);                       //update the listbox after an object is removed from usr_ favourite list
+
+                a.Dispose();
+            }
         }
         public void resetBs()
         {
@@ -59,8 +66,7 @@ namespace FilmLib_C_sharp_
             List<Film> matchedFilm = new List<Film>();
            
             for(int i = 0; i < matched.Count; i++)
-            {
-                
+            {                
                 Film temp = new Film(matched[i].ToString());
                 temp.importFilm();
                 matchedFilm.Add(temp);
@@ -69,6 +75,27 @@ namespace FilmLib_C_sharp_
             frm5.Show();
             this.Closed += (s, args) => frm5.Close();                       //when dashboard closed, the search result form get closed too
             a.Dispose();
+        }
+
+        private void detailBtn_Click(object sender, EventArgs e)
+        {
+            if (filmList.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select a movie");
+            }
+            else
+            {
+                Form6 frm6 = new Form6(filmList.SelectedItem.ToString(), ref usr_, this);
+                frm6.Show();
+                this.Closed += (s, args) => frm6.Close();
+            }
+        }
+
+        private void addMovBtn_Click(object sender, EventArgs e)
+        {
+            Form7 frm7 = new Form7();
+            frm7.Show();
+            this.Closed += (s, args) => frm7.Close();
         }
     }
 }

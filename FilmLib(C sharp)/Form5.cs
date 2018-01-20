@@ -43,7 +43,7 @@ namespace FilmLib_C_sharp_
             }
             else
             {
-                Form6 frm6 = new Form6(results.SelectedItems[0].Text, ref usr_, ref frm4_);
+                Form6 frm6 = new Form6(results.SelectedItems[0].Text, ref usr_, frm4_);
                 frm6.Show();
                 frm4_.Closed += (s, args) => frm6.Close();                  //when users sign out, close the movie info page 
             }
@@ -51,8 +51,6 @@ namespace FilmLib_C_sharp_
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-        
-      
             this.Close();
         }
     }
