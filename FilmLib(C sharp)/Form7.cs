@@ -26,23 +26,37 @@ namespace FilmLib_C_sharp_
             {
                 if (val.onlyLettersVal(genre.Text))
                 {
-                    if (val.LettersAndCommas(casts.Text))
+                    if (val.trailerURLVal(trailer.Text))
                     {
-                        Database a = new Database();
-                        List<object> rslt = a.getData("Films", "Name", "Name = '" + nameT.Text + "'");
-                        a.Dispose();
-                        if(rslt.Count == 0)
+                        if (val.imageURLVal(image.Text))
                         {
-                            check = true;
+                            if (val.LettersAndCommas(casts.Text))
+                            {
+                                Database a = new Database();
+                                List<object> rslt = a.getData("Films", "Name", "Name = '" + nameT.Text + "'");
+                                a.Dispose();
+                                if (rslt.Count == 0)
+                                {
+                                    check = true;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("This movie already exists");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Format: actor1, actor2, actor3");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("This movie already exists");
+                            MessageBox.Show("Should be a .jpg or .png URL");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Casts can only contain letters and 3 commas");
+                        MessageBox.Show("Format: https:");
                     }
                 }
                 else
@@ -57,7 +71,7 @@ namespace FilmLib_C_sharp_
             if (check)
             {
                 Database a = new Database();
-                a.storeData("Films", "Name, Descript, rate, Genre, tralerLink, imageLink, casts", "'" + nameT.Text + "', '" + descript.Text + "', " + ratingVal.Value + ", '" + genre.Text + "', '" + trailer.Text + "', '" + image.Text + "', '" + casts.Text + "'");
+                a.storeData("Films", "Name, Descript, rate, Genre, trailerLink, imageLink, casts", "'" + nameT.Text + "', '" + descript.Text + "', " + ratingVal.Value + ", '" + genre.Text + "', '" + trailer.Text + "', '" + image.Text + "', '" + casts.Text + "'");
                 MessageBox.Show("Movie is added");
                 a.Dispose();
                 

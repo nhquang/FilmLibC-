@@ -15,7 +15,7 @@ namespace FilmLib_C_sharp_
         }
         public bool onlyLettersVal(string name)
         {
-            Regex pattern = new Regex(@"^[a-zA-Z]*$");
+            Regex pattern = new Regex(@"^[a-zA-Z]+$");
             return pattern.IsMatch(name);
             
         }
@@ -32,12 +32,22 @@ namespace FilmLib_C_sharp_
         }*/
         public bool LettersAndNum(string val)
         {
-            Regex pattern = new Regex(@"^[0-9a-zA-Z]*$");
+            Regex pattern = new Regex(@"^[0-9a-zA-Z]+$");
             return pattern.IsMatch(val);
         }
         public bool LettersAndCommas(string val)
         {
-            Regex pattern = new Regex(@"^[a-zA-Z,{1,2}]*$");
+            Regex pattern = new Regex(@"^[a-zA-Z\s]+,\s[a-zA-Z\s]+,\s[a-zA-Z\s]+$");
+            return pattern.IsMatch(val);
+        }
+        public bool imageURLVal(string val)
+        {
+            Regex pattern = new Regex(@"^http.+.(png|jpg){1}$");
+            return pattern.IsMatch(val);
+        }
+        public bool trailerURLVal(string val)
+        {
+            Regex pattern = new Regex(@"^https:.+$");
             return pattern.IsMatch(val);
         }
     }

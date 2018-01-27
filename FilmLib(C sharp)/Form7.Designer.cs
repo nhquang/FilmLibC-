@@ -64,7 +64,7 @@
             this.exitBtn.Location = new System.Drawing.Point(260, 459);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(79, 35);
-            this.exitBtn.TabIndex = 8;
+            this.exitBtn.TabIndex = 9;
             this.exitBtn.Text = "Back";
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
@@ -75,7 +75,7 @@
             this.addBtn.Location = new System.Drawing.Point(16, 459);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(79, 35);
-            this.addBtn.TabIndex = 7;
+            this.addBtn.TabIndex = 8;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
@@ -83,18 +83,18 @@
             // image
             // 
             this.image.Location = new System.Drawing.Point(146, 400);
-            this.image.MaxLength = 50;
+            this.image.MaxLength = 100;
             this.image.Name = "image";
             this.image.Size = new System.Drawing.Size(193, 20);
-            this.image.TabIndex = 6;
+            this.image.TabIndex = 7;
             // 
             // trailer
             // 
             this.trailer.Location = new System.Drawing.Point(146, 365);
-            this.trailer.MaxLength = 50;
+            this.trailer.MaxLength = 100;
             this.trailer.Name = "trailer";
             this.trailer.Size = new System.Drawing.Size(193, 20);
-            this.trailer.TabIndex = 5;
+            this.trailer.TabIndex = 6;
             // 
             // casts
             // 
@@ -102,7 +102,7 @@
             this.casts.MaxLength = 100;
             this.casts.Name = "casts";
             this.casts.Size = new System.Drawing.Size(193, 20);
-            this.casts.TabIndex = 4;
+            this.casts.TabIndex = 5;
             // 
             // genre
             // 
@@ -110,7 +110,7 @@
             this.genre.MaxLength = 11;
             this.genre.Name = "genre";
             this.genre.Size = new System.Drawing.Size(193, 20);
-            this.genre.TabIndex = 3;
+            this.genre.TabIndex = 4;
             // 
             // nameT
             // 
@@ -204,7 +204,7 @@
             0});
             this.ratingVal.Name = "ratingVal";
             this.ratingVal.Size = new System.Drawing.Size(120, 20);
-            this.ratingVal.TabIndex = 2;
+            this.ratingVal.TabIndex = 3;
             this.ratingVal.Value = new decimal(new int[] {
             1,
             0,
