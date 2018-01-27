@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,8 +27,26 @@ namespace FilmLib_C_sharp_
             List<object> matchedUser =  a.getData("Users", "Username", "Username = '" + usr.Text + "'");        //look for a matched username
             if(matchedUser.Count > 0)                                                                           //perform password validation for the matched username
             {
-                List<object> matchedPass = a.getData("Users", "Pass", "Username = '" + usr.Text + "'");
-                if (string.Compare(matchedPass[0].ToString(), pass.Text) == 0)
+                List<object> savedPass = a.getData("Users", "Pass", "Username = '" + usr.Text + "'");
+
+                bool check2 = true;                                                                             //authenticate the encrypted password
+                byte[] hashBytes = Convert.FromBase64String(savedPass[0].ToString());
+                byte[] salt = new byte[16];
+                Array.ConstrainedCopy(hashBytes, 0, salt, 0, 16);
+                var pbkdf2 = new Rfc2898DeriveBytes(pass.Text, salt, 10000);
+                byte[] hash = pbkdf2.GetBytes(20);
+                for(int i = 0; i < 20; i++)
+                {
+                    if(hashBytes[i+16] != hash[i])
+                    {
+                        check2 = false;
+                        break;
+                    }
+                }
+                pbkdf2.Dispose();
+            
+
+                if (check2)
                 {
                     MessageBox.Show("Succeeded!!!");
                     check = true;

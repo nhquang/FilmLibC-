@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 //using System.Collections;
 //using System.Collections.Generic;
 using System.Text;
@@ -83,8 +84,25 @@ namespace FilmLib_C_sharp_
             //Validation completed
             if (check)
             {
+                string gender = "Male";
+                if (female.Checked)
+                {
+                    gender = "Female";
+                }
+                //Password encrypted
+                byte[] salt;
+                new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+                var pbkdf2 = new Rfc2898DeriveBytes(pass.Text, salt, 10000);
+                byte[] hash = pbkdf2.GetBytes(20);
+                byte[] hashBytes = new byte[36];
+                Array.ConstrainedCopy(salt,0, hashBytes, 0, 16);
+                Array.ConstrainedCopy(hash,0, hashBytes, 16, 20);
+                string hashedPassword = Convert.ToBase64String(hashBytes);
+                pbkdf2.Dispose();
+                //finising encrypting password
+                //database object created
                 Database a = new Database();
-                a.storeData("Users", "fName, lName, age, Username, Pass", "'" + fname.Text + "', '" + lName.Text + "', " + age.Text + ", '" + usr.Text + "', '" + pass.Text + "'");
+                a.storeData("Users", "fName, lName, age, Username, Pass, gender", "'" + fname.Text + "', '" + lName.Text + "', " + age.Text + ", '" + usr.Text + "', '" + hashedPassword + "', '" + gender + "'");
                 a.Dispose();
                 MessageBox.Show("Registration succeeded!!!");
                 this.Close();
