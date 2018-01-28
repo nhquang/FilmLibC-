@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmLib(C sharp)", "FilmLib
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FilmLibInstaller", "FilmLibInstaller\FilmLibInstaller.vdproj", "{CF439757-012C-4209-BDBD-E1176756030A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FilmLib", "FilmLib\FilmLib.vdproj", "{E56FF833-D7A0-4AAA-9BDE-3B4DE0E8CC10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,8 @@ Global
 		{ACEC9887-9C8D-4181-B0E0-BFB8008997F0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF439757-012C-4209-BDBD-E1176756030A}.Debug|Any CPU.ActiveCfg = Debug
 		{CF439757-012C-4209-BDBD-E1176756030A}.Release|Any CPU.ActiveCfg = Release
+		{E56FF833-D7A0-4AAA-9BDE-3B4DE0E8CC10}.Debug|Any CPU.ActiveCfg = Debug
+		{E56FF833-D7A0-4AAA-9BDE-3B4DE0E8CC10}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
