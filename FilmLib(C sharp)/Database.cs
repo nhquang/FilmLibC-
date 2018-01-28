@@ -17,7 +17,9 @@ namespace FilmLib_C_sharp_
         
         public Database()
         {
-            sqlcon = new SqlConnection("Server=DESKTOP-HCQ603N;Database=FilmLib;Integrated Security=SSPI");
+            //sqlcon = new SqlConnection("Server=DESKTOP-HCQ603N;Database=FilmLib;Integrated Security=SSPI");
+            sqlcon = new SqlConnection(@"Data Source=192.168.0.110\SQLEXPRESS,1433;Initial Catalog=FilmLib;User ID=sa;Password=Thachotao96@");
+           
             try
             {
                 if (sqlcon.State != ConnectionState.Open)

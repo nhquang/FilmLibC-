@@ -30,18 +30,18 @@
         {
             this.signOutBtn = new System.Windows.Forms.Button();
             this.Panel2 = new System.Windows.Forms.Panel();
+            this.detailBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.TextBox();
             this.rmBtn = new System.Windows.Forms.Button();
             this.addMovBtn = new System.Windows.Forms.Button();
             this.filmList = new System.Windows.Forms.ListBox();
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.editProfileBtn = new System.Windows.Forms.Button();
             this.ageLbl = new System.Windows.Forms.Label();
             this.genderLbl = new System.Windows.Forms.Label();
             this.nameLbl = new System.Windows.Forms.Label();
             this.dashboard = new System.Windows.Forms.Label();
-            this.detailBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel2.SuspendLayout();
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,7 @@
             // 
             // Panel2
             // 
+            this.Panel2.Controls.Add(this.label1);
             this.Panel2.Controls.Add(this.detailBtn);
             this.Panel2.Controls.Add(this.searchBtn);
             this.Panel2.Controls.Add(this.search);
@@ -68,6 +69,16 @@
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(275, 320);
             this.Panel2.TabIndex = 8;
+            // 
+            // detailBtn
+            // 
+            this.detailBtn.Location = new System.Drawing.Point(6, 101);
+            this.detailBtn.Name = "detailBtn";
+            this.detailBtn.Size = new System.Drawing.Size(122, 23);
+            this.detailBtn.TabIndex = 2;
+            this.detailBtn.Text = "View Details";
+            this.detailBtn.UseVisualStyleBackColor = true;
+            this.detailBtn.Click += new System.EventHandler(this.detailBtn_Click);
             // 
             // searchBtn
             // 
@@ -118,7 +129,6 @@
             // 
             // Panel1
             // 
-            this.Panel1.Controls.Add(this.editProfileBtn);
             this.Panel1.Controls.Add(this.ageLbl);
             this.Panel1.Controls.Add(this.genderLbl);
             this.Panel1.Controls.Add(this.nameLbl);
@@ -126,16 +136,6 @@
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(275, 320);
             this.Panel1.TabIndex = 10;
-            // 
-            // editProfileBtn
-            // 
-            this.editProfileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editProfileBtn.Location = new System.Drawing.Point(3, 256);
-            this.editProfileBtn.Name = "editProfileBtn";
-            this.editProfileBtn.Size = new System.Drawing.Size(266, 64);
-            this.editProfileBtn.TabIndex = 1;
-            this.editProfileBtn.Text = "Edit Profile";
-            this.editProfileBtn.UseVisualStyleBackColor = true;
             // 
             // ageLbl
             // 
@@ -176,15 +176,15 @@
             this.dashboard.Text = "Dashboard";
             this.dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // detailBtn
+            // label1
             // 
-            this.detailBtn.Location = new System.Drawing.Point(6, 101);
-            this.detailBtn.Name = "detailBtn";
-            this.detailBtn.Size = new System.Drawing.Size(122, 23);
-            this.detailBtn.TabIndex = 2;
-            this.detailBtn.Text = "View Details";
-            this.detailBtn.UseVisualStyleBackColor = true;
-            this.detailBtn.Click += new System.EventHandler(this.detailBtn_Click);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Enter blank to see all movies";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form4
             // 
@@ -214,11 +214,11 @@
         internal System.Windows.Forms.Button addMovBtn;
         internal System.Windows.Forms.ListBox filmList;
         internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.Button editProfileBtn;
         internal System.Windows.Forms.Label ageLbl;
         internal System.Windows.Forms.Label genderLbl;
         internal System.Windows.Forms.Label nameLbl;
         internal System.Windows.Forms.Label dashboard;
         internal System.Windows.Forms.Button detailBtn;
+        internal System.Windows.Forms.Label label1;
     }
 }

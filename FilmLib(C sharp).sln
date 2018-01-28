@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmLib(C sharp)", "FilmLib(C sharp)\FilmLib(C sharp).csproj", "{ACEC9887-9C8D-4181-B0E0-BFB8008997F0}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FilmLibInstaller", "FilmLibInstaller\FilmLibInstaller.vdproj", "{CF439757-012C-4209-BDBD-E1176756030A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,13 @@ Global
 		{ACEC9887-9C8D-4181-B0E0-BFB8008997F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACEC9887-9C8D-4181-B0E0-BFB8008997F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACEC9887-9C8D-4181-B0E0-BFB8008997F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF439757-012C-4209-BDBD-E1176756030A}.Debug|Any CPU.ActiveCfg = Debug
+		{CF439757-012C-4209-BDBD-E1176756030A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1A0B1C5-A0EF-41CC-83D5-6BF3BB2696EC}
 	EndGlobalSection
 EndGlobal
