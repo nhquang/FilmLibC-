@@ -46,7 +46,7 @@ namespace FilmLib_C_sharp_
                             }
                             else
                             {
-                                MessageBox.Show("Format: actor, actor, actor. Digits is not allowed");
+                                MessageBox.Show("Format: actor, actor, actor. Digits are not allowed");
                             }
                         }
                         else
