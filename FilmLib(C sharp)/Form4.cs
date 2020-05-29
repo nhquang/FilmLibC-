@@ -19,6 +19,7 @@ namespace FilmLib_C_sharp_
             InitializeComponent();
             bs_ = new BindingSource();
             usr_ = user;
+            //nameLbl.BeginInvoke()
             nameLbl.Text += "Hi " + usr_.getName();
             ageLbl.Text += " " + usr_.getAge().ToString();
             genderLbl.Text += " " + usr_.getGender();
@@ -28,10 +29,10 @@ namespace FilmLib_C_sharp_
 
         private void signOutBtn_Click(object sender, EventArgs e)
         {
-            
+
             bs_.Dispose();
             this.Close();
-            
+
         }
 
         private void rmBtn_Click(object sender, EventArgs e)
@@ -64,9 +65,9 @@ namespace FilmLib_C_sharp_
             Database a = new Database();
             List<object> matched = a.getData("Films", "Name", "Name LIKE '%" + search.Text + "%'");
             List<Film> matchedFilm = new List<Film>();
-           
+
             for(int i = 0; i < matched.Count; i++)
-            {                
+            {
                 Film temp = new Film(matched[i].ToString());
                 temp.importFilm();
                 matchedFilm.Add(temp);
