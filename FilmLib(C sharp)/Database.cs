@@ -20,7 +20,7 @@ namespace FilmLib_C_sharp_
         public Database()
         {
             //sqlcon = new SqlConnection("Server=DESKTOP-HCQ603N;Database=FilmLib;Integrated Security=SSPI");
-            sqlcon = new SqlConnection(ConfigurationSettings.AppSettings["connectionString"].Trim().Replace("{your_password}","testing123!"));
+            sqlcon = new SqlConnection(ConfigurationSettings.AppSettings["connectionString"]?.Trim().Replace("{your_password}",decryption(ConfigurationSettings.AppSettings["password"]?.Trim())));
            
             try
             {
@@ -125,6 +125,12 @@ namespace FilmLib_C_sharp_
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private static string decryption(string encrypted)
+        {
+            byte[] bytes = Convert.FromBase64String(encrypted);
+            return Encoding.ASCII.GetString(bytes);
         }
 
         #region IDisposable Support
