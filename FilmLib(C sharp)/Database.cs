@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -12,14 +13,14 @@ namespace FilmLib_C_sharp_
 {
      public class Database : IDisposable                        //database queries handling class
     {
-        private MySqlConnection sqlcon;
-        private MySqlCommand cmd;
-        private MySqlDataReader reader;
+        private SqlConnection sqlcon;
+        private SqlCommand cmd;
+        private SqlDataReader reader;
         
         public Database()
         {
             //sqlcon = new SqlConnection("Server=DESKTOP-HCQ603N;Database=FilmLib;Integrated Security=SSPI");
-            sqlcon = new MySqlConnection("Server=sql9.freemysqlhosting.net;Port=3306;Stmt=;DataBase=sql9218209;Uid=sql9218209;Pwd=i77B4HLkKH");
+            sqlcon = new SqlConnection(ConfigurationSettings.AppSettings["connectionString"].Trim().Replace("{your_password}","testing123!"));
            
             try
             {
@@ -42,7 +43,7 @@ namespace FilmLib_C_sharp_
             {
                 //cmd = new SqlCommand();
                 //string sql = "SELECT " + col + " FROM " + tbl + " WHERE " + cond;
-                cmd = new MySqlCommand();
+                cmd = new SqlCommand();
                 cmd.CommandText = "SELECT " + col + " FROM " + tbl + " WHERE " + cond;
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = sqlcon;
@@ -71,7 +72,7 @@ namespace FilmLib_C_sharp_
             List<object> data = new List<object>();
             try
             {
-                cmd = new MySqlCommand();
+                cmd = new SqlCommand();
                 cmd.CommandText = "SELECT " + col + " FROM " + tbl1 + " a Join " + tbl2 + " b On a." + key + "=b." + key + " WHERE " + cond;
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = sqlcon;
@@ -99,7 +100,7 @@ namespace FilmLib_C_sharp_
         {
             try
             {
-                cmd = new MySqlCommand();
+                cmd = new SqlCommand();
                 cmd.CommandText = "INSERT INTO " + tbl + " (" + cols + ") VALUES (" + vals + ")";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = sqlcon;
@@ -114,7 +115,7 @@ namespace FilmLib_C_sharp_
         {
             try
             {
-                cmd = new MySqlCommand();
+                cmd = new SqlCommand();
                 cmd.CommandText = "DELETE FROM " + tbl + " WHERE " + conds;
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = sqlcon;
