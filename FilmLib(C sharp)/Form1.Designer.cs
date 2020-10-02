@@ -30,7 +30,6 @@
         {
             this.welLbl = new System.Windows.Forms.Label();
             this.welcomeLbl = new System.Windows.Forms.Label();
-            this.creditLbl = new System.Windows.Forms.Label();
             this.logInBtn = new System.Windows.Forms.Button();
             this.registerBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
@@ -48,25 +47,13 @@
             // 
             // welcomeLbl
             // 
-            this.welcomeLbl.AutoSize = true;
             this.welcomeLbl.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeLbl.Location = new System.Drawing.Point(75, 9);
+            this.welcomeLbl.Location = new System.Drawing.Point(12, 54);
             this.welcomeLbl.Name = "welcomeLbl";
-            this.welcomeLbl.Size = new System.Drawing.Size(319, 31);
+            this.welcomeLbl.Size = new System.Drawing.Size(458, 31);
             this.welcomeLbl.TabIndex = 1;
             this.welcomeLbl.Text = "Welcome To Film Library";
             this.welcomeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // creditLbl
-            // 
-            this.creditLbl.AutoSize = true;
-            this.creditLbl.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creditLbl.Location = new System.Drawing.Point(154, 67);
-            this.creditLbl.Name = "creditLbl";
-            this.creditLbl.Size = new System.Drawing.Size(290, 22);
-            this.creditLbl.TabIndex = 2;
-            this.creditLbl.Text = "Designed and developed by Quang";
-            this.creditLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // logInBtn
             // 
@@ -109,13 +96,11 @@
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.logInBtn);
-            this.Controls.Add(this.creditLbl);
             this.Controls.Add(this.welcomeLbl);
             this.Controls.Add(this.welLbl);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -123,7 +108,6 @@
 
         private System.Windows.Forms.Label welLbl;
         private System.Windows.Forms.Label welcomeLbl;
-        private System.Windows.Forms.Label creditLbl;
         private System.Windows.Forms.Button logInBtn;
         private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.Button exitBtn;
