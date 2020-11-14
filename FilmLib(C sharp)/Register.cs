@@ -89,17 +89,9 @@ namespace FilmLib_C_sharp_
                 {
                     gender = "Female";
                 }
-                //Password encrypted
-                byte[] salt;
-                new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
-                var pbkdf2 = new Rfc2898DeriveBytes(pass.Text, salt, 10000);
-                byte[] hash = pbkdf2.GetBytes(20);
-                byte[] hashBytes = new byte[36];
-                Array.ConstrainedCopy(salt,0, hashBytes, 0, 16);
-                Array.ConstrainedCopy(hash,0, hashBytes, 16, 20);
-                string hashedPassword = Convert.ToBase64String(hashBytes);
-                pbkdf2.Dispose();
-                //finising encrypting password
+                //Hash Pwd
+                var hashedPwd = hashPwd(this.pass.Text);
+                //finished hashing password
                 //database object created
                 Database a = new Database();
                 a.storeData("Users", "fName, lName, age, Username, Pass, gender", "'" + fname.Text + "', '" + lName.Text + "', " + age.Text + ", '" + usr.Text + "', '" + hashedPassword + "', '" + gender + "'");
@@ -111,6 +103,22 @@ namespace FilmLib_C_sharp_
             //storing data completed
             
             
+        }
+
+        private string hashPwd(string pwd)
+        {
+            string hashed = string.Empty;
+            byte[] salt;
+            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+            using (var pbkdf2 = new Rfc2898DeriveBytes(pwd, salt, 10000))
+            {
+                byte[] hash = pbkdf2.GetBytes(20);
+                byte[] hashBytes = new byte[36];
+                Array.ConstrainedCopy(salt, 0, hashBytes, 0, 16);
+                Array.ConstrainedCopy(hash, 0, hashBytes, 16, 20);
+                hashed = Convert.ToBase64String(hashBytes);
+            }
+            return hashed;
         }
 
         private void exitBtn_Click(object sender, EventArgs e)

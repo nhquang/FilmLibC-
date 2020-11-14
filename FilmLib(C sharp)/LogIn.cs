@@ -31,24 +31,7 @@ namespace FilmLib_C_sharp_
                 {
                     List<object> savedPass = a.getData("Users", "Pass", "Username = '" + usr.Text + "'");
 
-                    bool check2 = true;                                                                             //authenticate the encrypted password
-                    byte[] hashBytes = Convert.FromBase64String(savedPass[0].ToString());
-                    byte[] salt = new byte[16];
-                    Array.ConstrainedCopy(hashBytes, 0, salt, 0, 16);
-                    var pbkdf2 = new Rfc2898DeriveBytes(pass.Text, salt, 10000);
-                    byte[] hash = pbkdf2.GetBytes(20);
-                    for (int i = 0; i < 20; i++)
-                    {
-                        if (hashBytes[i + 16] != hash[i])
-                        {
-                            check2 = false;
-                            break;
-                        }
-                    }
-                    pbkdf2.Dispose();
-
-
-                    if (check2)
+                    if (checkHashedPasswords(savedPass[0].ToString()))
                     {
                         MessageBox.Show("Succeeded!!!");
                         check = true;
@@ -79,6 +62,27 @@ namespace FilmLib_C_sharp_
 
                 }
             }
+        }
+
+        private bool checkHashedPasswords(string storedPwd)
+        {
+            bool check = true;                                                                             //authenticate the hashed password
+            byte[] hashBytes = Convert.FromBase64String(storedPwd);
+            byte[] salt = new byte[16];
+            Array.ConstrainedCopy(hashBytes, 0, salt, 0, 16);
+            using (var pbkdf2 = new Rfc2898DeriveBytes(pass.Text, salt, 10000))
+            {
+                byte[] hash = pbkdf2.GetBytes(20);
+                for (int i = 0; i < 20; i++)
+                {
+                    if (hashBytes[i + 16] != hash[i])
+                    {
+                        check = false;
+                        break;
+                    }
+                }
+            }
+            return check;
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
