@@ -18,6 +18,7 @@ namespace FilmLib_C_sharp_
         public Register()
         {
             InitializeComponent();
+            this.AcceptButton = signUpBtn;
         }
         
 
