@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace FilmLib_C_sharp_
 {
-    public partial class Form4 : Form
+    public partial class Dashboard : Form
     {
         private User usr_;
         private BindingSource bs_;
-        public Form4(ref User user)                             //prepare the dashboard with the user's info
+        public Dashboard(ref User user)                             //prepare the dashboard with the user's info
         {
             InitializeComponent();
             bs_ = new BindingSource();

@@ -12,10 +12,10 @@ namespace FilmLib_C_sharp_
 {
     public partial class Form6 : Form
     {
-        private Form4 frm4_;
+        private Dashboard frm4_;
         private User usr_;
         private Film film_;
-        public Form6(string filmNamee, ref User usr, Form4 frm4)
+        public Form6(string filmNamee, ref User usr, Dashboard frm4)
         {
             InitializeComponent();
             usr_ = usr;

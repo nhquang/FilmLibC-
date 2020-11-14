@@ -1,6 +1,6 @@
 ﻿namespace FilmLib_C_sharp_
 {
-    partial class Form4
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.signOutBtn = new System.Windows.Forms.Button();
             this.Panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.detailBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
             this.search = new System.Windows.Forms.TextBox();
@@ -40,8 +41,6 @@
             this.ageLbl = new System.Windows.Forms.Label();
             this.genderLbl = new System.Windows.Forms.Label();
             this.nameLbl = new System.Windows.Forms.Label();
-            this.dashboard = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Panel2.SuspendLayout();
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +68,16 @@
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(275, 320);
             this.Panel2.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Enter blank to see all movies";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // detailBtn
             // 
@@ -166,27 +175,7 @@
             this.nameLbl.TabIndex = 0;
             this.nameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dashboard
-            // 
-            this.dashboard.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboard.Location = new System.Drawing.Point(21, 9);
-            this.dashboard.Name = "dashboard";
-            this.dashboard.Size = new System.Drawing.Size(557, 68);
-            this.dashboard.TabIndex = 0;
-            this.dashboard.Text = "Dashboard";
-            this.dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 23);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Enter blank to see all movies";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Form4
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,9 +183,8 @@
             this.Controls.Add(this.signOutBtn);
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.Panel1);
-            this.Controls.Add(this.dashboard);
-            this.Name = "Form4";
-            this.Text = "Form4";
+            this.Name = "Dashboard";
+            this.Text = "Dashboard";
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
             this.Panel1.ResumeLayout(false);

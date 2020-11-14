@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace FilmLib_C_sharp_
 {
-    public partial class Form2 : Form  
+    public partial class LogIn : Form  
     {
-        public Form2()
+        public LogIn()
         {
             InitializeComponent();
             this.AcceptButton = loginBtn;
@@ -71,7 +71,7 @@ namespace FilmLib_C_sharp_
 
                     initiateUser.importUser();                                                                      //pull user's info from database
 
-                    Form4 frm4 = new Form4(ref initiateUser);                                                           //pass User object to Dashboard form
+                    Dashboard frm4 = new Dashboard(ref initiateUser);                                                           //pass User object to Dashboard form
 
                     frm4.Show();
                     this.Hide();

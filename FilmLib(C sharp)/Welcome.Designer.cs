@@ -1,6 +1,6 @@
 ﻿namespace FilmLib_C_sharp_
 {
-    partial class Form1
+    partial class Welcome
     {
         /// <summary>
         /// Required designer variable.
@@ -88,7 +88,7 @@
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
-            // Form1
+            // Welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,8 +98,8 @@
             this.Controls.Add(this.logInBtn);
             this.Controls.Add(this.welcomeLbl);
             this.Controls.Add(this.welLbl);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Welcome";
+            this.Text = "Welcome";
             this.ResumeLayout(false);
 
         }

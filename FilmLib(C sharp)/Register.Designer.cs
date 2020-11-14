@@ -1,6 +1,6 @@
 ﻿namespace FilmLib_C_sharp_
 {
-    partial class Form3
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -222,7 +222,7 @@
             this.female.Text = "Female";
             this.female.UseVisualStyleBackColor = true;
             // 
-            // Form3
+            // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,8 +245,8 @@
             this.Controls.Add(this.ageLbl);
             this.Controls.Add(this.lnameLbl);
             this.Controls.Add(this.fnameLbl);
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Name = "Register";
+            this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();
 

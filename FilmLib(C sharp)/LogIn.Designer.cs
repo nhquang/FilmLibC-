@@ -1,6 +1,6 @@
 ﻿namespace FilmLib_C_sharp_
 {
-    partial class Form2
+    partial class LogIn
     {
         /// <summary>
         /// Required designer variable.

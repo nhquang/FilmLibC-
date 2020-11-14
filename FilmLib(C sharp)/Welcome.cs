@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FilmLib_C_sharp_
 {
-    public partial class Form1 : Form
+    public partial class Welcome : Form
     {
-        public Form1()
+        public Welcome()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace FilmLib_C_sharp_
         private void logInBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 a = new Form2();
+            LogIn a = new LogIn();
             a.Show();
             a.Closed += (s, args) => this.Show();
             
@@ -35,7 +35,7 @@ namespace FilmLib_C_sharp_
         private void registerBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form3 b = new Form3();
+            Register b = new Register();
             b.Show();
             b.Closed += (s, args) => this.Show(); //open form1 while closing form3
             

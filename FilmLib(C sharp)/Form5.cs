@@ -13,9 +13,9 @@ namespace FilmLib_C_sharp_
     public partial class Form5 : Form
     {
         private User usr_;
-        private Form4 frm4_;
+        private Dashboard frm4_;
         
-        public Form5(ref List<Film> matched, ref User usr, Form4 frm4)          //prepare the listView with matched movies
+        public Form5(ref List<Film> matched, ref User usr, Dashboard frm4)          //prepare the listView with matched movies
         {
             InitializeComponent();
             usr_ = usr;
