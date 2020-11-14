@@ -10,25 +10,26 @@ using System.Windows.Forms;
 
 namespace FilmLib_C_sharp_
 {
-    public partial class Form6 : Form
+    public partial class FilmDetail : Form
     {
         private Dashboard frm4_;
         private User usr_;
         private Film film_;
-        public Form6(string filmNamee, ref User usr, Dashboard frm4)
+        public FilmDetail(string filmNamee, ref User usr, Dashboard frm4)
         {
             InitializeComponent();
             usr_ = usr;
             frm4_ = frm4;
             film_ = new Film(filmNamee);
             film_.importFilm();
-            filmName.Text = film_.getName();
+            Text = filmName.Text = film_.getName();
             descriptText.Text = film_.getDescript();
             genreText.Text = film_.getGenre();
             ratingText.Text = film_.getRate().ToString() + " /10";
             castText.Text = film_.getCasts();
             image.ImageLocation = film_.getImageLink();
             image.SizeMode = PictureBoxSizeMode.StretchImage;
+            
         }
 
         private void addBtn_Click(object sender, EventArgs e)

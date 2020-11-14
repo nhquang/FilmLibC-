@@ -1,6 +1,6 @@
 ﻿namespace FilmLib_C_sharp_
 {
-    partial class Form7
+    partial class AddMovie
     {
         /// <summary>
         /// Required designer variable.
@@ -221,7 +221,7 @@
             this.rateLbl.Text = "Rating:";
             this.rateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Form7
+            // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,8 +243,8 @@
             this.Controls.Add(this.genreLbl);
             this.Controls.Add(this.desLbl);
             this.Controls.Add(this.nameLbl);
-            this.Name = "Form7";
-            this.Text = "Form7";
+            this.Name = "AddMovie";
+            this.Text = "AddMovie";
             ((System.ComponentModel.ISupportInitialize)(this.ratingVal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,6 +1,6 @@
 ﻿namespace FilmLib_C_sharp_
 {
-    partial class Form5
+    partial class Search
     {
         /// <summary>
         /// Required designer variable.
@@ -65,6 +65,7 @@
             this.name1,
             this.genre,
             this.rating});
+            this.results.HideSelection = false;
             this.results.Location = new System.Drawing.Point(12, 79);
             this.results.Name = "results";
             this.results.Size = new System.Drawing.Size(380, 232);
@@ -97,7 +98,7 @@
             this.title.Text = "Search Result";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form5
+            // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -106,8 +107,8 @@
             this.Controls.Add(this.detailsBtn);
             this.Controls.Add(this.results);
             this.Controls.Add(this.title);
-            this.Name = "Form5";
-            this.Text = "Form5";
+            this.Name = "Search";
+            this.Text = "Search";
             this.ResumeLayout(false);
 
         }

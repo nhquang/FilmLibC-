@@ -71,7 +71,7 @@ namespace FilmLib_C_sharp_
                 temp.importFilm();
                 matchedFilm.Add(temp);
             }
-            Form5 frm5 = new Form5(ref matchedFilm, ref usr_, this);
+            Search frm5 = new Search(ref matchedFilm, ref usr_, this);
             frm5.Show();
             this.Closed += (s, args) => frm5.Close();                       //when dashboard closed, the search result form get closed too
             a.Dispose();
@@ -85,7 +85,7 @@ namespace FilmLib_C_sharp_
             }
             else
             {
-                Form6 frm6 = new Form6(filmList.SelectedItem.ToString(), ref usr_, this);
+                FilmDetail frm6 = new FilmDetail(filmList.SelectedItem.ToString(), ref usr_, this);
                 frm6.Show();
                 this.Closed += (s, args) => frm6.Close();
             }
@@ -93,7 +93,7 @@ namespace FilmLib_C_sharp_
 
         private void addMovBtn_Click(object sender, EventArgs e)
         {
-            Form7 frm7 = new Form7();
+            AddMovie frm7 = new AddMovie();
             frm7.Show();
             this.Closed += (s, args) => frm7.Close();
         }

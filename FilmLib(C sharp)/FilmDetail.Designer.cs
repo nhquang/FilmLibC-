@@ -1,6 +1,6 @@
 ﻿namespace FilmLib_C_sharp_
 {
-    partial class Form6
+    partial class FilmDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -168,7 +168,7 @@
             this.filmName.TabIndex = 0;
             this.filmName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form6
+            // FilmDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,8 +186,7 @@
             this.Controls.Add(this.descLbl);
             this.Controls.Add(this.image);
             this.Controls.Add(this.filmName);
-            this.Name = "Form6";
-            this.Text = "Form6";
+            this.Name = "FilmDetail";
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

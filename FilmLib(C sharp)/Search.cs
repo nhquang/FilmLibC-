@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace FilmLib_C_sharp_
 {
-    public partial class Form5 : Form
+    public partial class Search : Form
     {
         private User usr_;
         private Dashboard frm4_;
         
-        public Form5(ref List<Film> matched, ref User usr, Dashboard frm4)          //prepare the listView with matched movies
+        public Search(ref List<Film> matched, ref User usr, Dashboard frm4)          //prepare the listView with matched movies
         {
             InitializeComponent();
             usr_ = usr;
@@ -43,7 +43,7 @@ namespace FilmLib_C_sharp_
             }
             else
             {
-                Form6 frm6 = new Form6(results.SelectedItems[0].Text, ref usr_, frm4_);
+                FilmDetail frm6 = new FilmDetail(results.SelectedItems[0].Text, ref usr_, frm4_);
                 frm6.Show();
                 frm4_.Closed += (s, args) => frm6.Close();                  //when users sign out, close the movie info page 
             }

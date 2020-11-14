@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FilmLib_C_sharp_
 {
-    public partial class Form7 : Form
+    public partial class AddMovie : Form
     {
-        public Form7()
+        public AddMovie()
         {
             InitializeComponent();
         }

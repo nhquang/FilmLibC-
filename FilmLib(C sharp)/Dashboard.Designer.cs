@@ -47,7 +47,7 @@
             // 
             // signOutBtn
             // 
-            this.signOutBtn.Location = new System.Drawing.Point(497, 431);
+            this.signOutBtn.Location = new System.Drawing.Point(497, 352);
             this.signOutBtn.Name = "signOutBtn";
             this.signOutBtn.Size = new System.Drawing.Size(78, 26);
             this.signOutBtn.TabIndex = 7;
@@ -64,7 +64,7 @@
             this.Panel2.Controls.Add(this.rmBtn);
             this.Panel2.Controls.Add(this.addMovBtn);
             this.Panel2.Controls.Add(this.filmList);
-            this.Panel2.Location = new System.Drawing.Point(303, 98);
+            this.Panel2.Location = new System.Drawing.Point(303, 22);
             this.Panel2.Name = "Panel2";
             this.Panel2.Size = new System.Drawing.Size(275, 320);
             this.Panel2.TabIndex = 8;
@@ -141,7 +141,7 @@
             this.Panel1.Controls.Add(this.ageLbl);
             this.Panel1.Controls.Add(this.genderLbl);
             this.Panel1.Controls.Add(this.nameLbl);
-            this.Panel1.Location = new System.Drawing.Point(21, 98);
+            this.Panel1.Location = new System.Drawing.Point(21, 22);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(275, 320);
             this.Panel1.TabIndex = 10;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 469);
+            this.ClientSize = new System.Drawing.Size(599, 390);
             this.Controls.Add(this.signOutBtn);
             this.Controls.Add(this.Panel2);
             this.Controls.Add(this.Panel1);
