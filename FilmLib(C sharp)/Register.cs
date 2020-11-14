@@ -94,7 +94,7 @@ namespace FilmLib_C_sharp_
                 //finished hashing password
                 //database object created
                 Database a = new Database();
-                a.storeData("Users", "fName, lName, age, Username, Pass, gender", "'" + fname.Text + "', '" + lName.Text + "', " + age.Text + ", '" + usr.Text + "', '" + hashedPassword + "', '" + gender + "'");
+                a.storeData("Users", "fName, lName, age, Username, Pass, gender", "'" + fname.Text + "', '" + lName.Text + "', " + age.Text + ", '" + usr.Text + "', '" + hashedPwd + "', '" + gender + "'");
                 a.Dispose();
                 MessageBox.Show("Registration succeeded!!!");
                 this.Close();
